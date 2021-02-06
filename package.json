@@ -18,10 +18,10 @@
   },
   "homepage": "https://github.com/hyper-e/liri-node-app#readme",
   "dependencies": {
-    "axios": "^0.18.0",
-    "dotenv": "^8.0.0",
-    "inquirer": "^6.3.1",
-    "moment": "^2.24.0",
+    "axios": "^0.18.1",
+    "dotenv": "^8.2.0",
+    "inquirer": "^6.5.2",
+    "moment": "^2.29.1",
     "node-spotify-api": "^1.1.1"
   }
 }
