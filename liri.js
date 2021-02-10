@@ -3,11 +3,13 @@ require("dotenv").config();
 var inquirer = require("inquirer");
 var moment = require("moment");
 var axios = require("axios");
+var keys = require("./js/keys.js");
+var Spotify = require("node-spotify-api");
 //var inquirer = require("inquirer");
 // var keys = require("./js/keys");
 // var Spotify = require("node-spotify-api");
 // var spotify = new Spotify(keys.spotify);
-var search = process.argv[2];
+// var search = process.argv[2];
 //var spotifyURI = `https://accounts.spotify.com/authorize?${keys.spotify.id}`;
 var command = process.argv[2];
 //var input = process.argv[3];
@@ -22,15 +24,14 @@ inquirer
     },
   ])
   .then((answers) => {
-    
-    var choice = answers.action
+    var choice = answers.action;
 
     if (choice === "concert-this") {
-      main("Please type in the artist name?", choice);
-    } else if (choice === "spotify-this-song"){
-      main("Please type in the name of the song?", choice);
+      main("Please type in the artist name to find their concerts?", choice);
+    } else if (choice === "spotify-this-song") {
+      main("Please type in the name of the song you would like to search?", choice);
     } else if (choice === "movie-this") {
-      main("Please type in the name of the movie?", choice);
+      main("Please type in the name of the movie you would like to search?", choice);
     }
   })
   .catch((error) => {
@@ -53,7 +54,6 @@ function main(question, choice) {
       },
     ])
     .then((answer) => {
-     
       var searchInput = answer.userInput;
 
       switch (choice) {
@@ -67,7 +67,10 @@ function main(question, choice) {
               .get(bandApi)
               .then(function (response) {
                 var info = response.data;
-
+         
+                if (info == [].length) {
+                console.log("\n\nSorry there is no upcoming concerts for this artist.")
+                } else {
                 console.log(
                   "\n Here are the upcoming concerts:" +
                     "\n" +
@@ -87,7 +90,8 @@ function main(question, choice) {
                       "MM-DD-YYYY"
                     )} \n\n---------------------------------------------------------------`
                   );
-                }
+                };
+                };
               })
               .catch(function (error) {
                 console.log(error);
@@ -96,26 +100,34 @@ function main(question, choice) {
           break;
         case "spotify-this-song":
           {
-            var keys = require("./js/keys");
-            var Spotify = require("node-spotify-api");
             var spotify = new Spotify(keys.spotify);
-
+4
             spotify
-              .search({ query: UserInput, type: "track", limit: 1 })
+              .search({ query: searchInput, type: "track", limit: 1 })
               .then(function (response) {
+
                 var tracks = response.tracks.items;
+
+                if (tracks == [].length) {
+                  console.log("\nSorry we couldn't find song. \nHere you should listen to The Sign by Ace of Base.");
+                } else {
+              
+                var art = [];
 
                 for (var i = 0; i < tracks.length; i++) {
                   var artist = tracks[i].artists;
                   var songsName = tracks[i].name;
                   var previewLink = tracks[i].external_urls.spotify;
                   var albumName = tracks[i].album.name;
-                  //console.log(artist)
-                  //console.log(songsName.name)
+
                   for (var i = 0; i < artist.length; i++) {
-                    console.log(artist[i].name);
+                  art.push(" " + artist[i].name)
                   }
+                 
+                  console.log(`\nHere is the track ${songsName}. \n\nThese are the artist on the track ${art}. \n\nThis track belongs to this album ${albumName}. \n\nHere is a preview link from Spotify ${previewLink}.`);
+               
                 }
+              };
               })
               .catch(function (err) {
                 console.log(err);
@@ -124,12 +136,12 @@ function main(question, choice) {
           break;
         case "movie-this":
           {
-            console.log("movie");
-          }
-          break;
-        case "do-what-it-says":
-          {
-            console.log("do it");
+              var pass = keys.movie
+            if (res == "" || res == [].length) {
+              console.log("nOPE")
+            } else {
+              
+            };
           }
           break;
         default:
