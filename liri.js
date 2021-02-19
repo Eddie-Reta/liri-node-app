@@ -5,22 +5,31 @@ var moment = require("moment");
 var axios = require("axios");
 var keys = require("./js/keys.js");
 var Spotify = require("node-spotify-api");
-//var inquirer = require("inquirer");
-// var keys = require("./js/keys");
-// var Spotify = require("node-spotify-api");
-// var spotify = new Spotify(keys.spotify);
-// var search = process.argv[2];
-//var spotifyURI = `https://accounts.spotify.com/authorize?${keys.spotify.id}`;
-var command = process.argv[2];
-//var input = process.argv[3];
+var fs = require("fs");
 
+// //bandApi
+// var bandApi =
+// "https://rest.bandsintown.com/artists/" +
+// searchInput +
+// "/events?app_id=codingbootcamp";
+// axios
+// .get(bandApi);
+
+// //spotifyApi
+
+//Start function for the initial launch of the process. Giving you a choice of options.
 function start() {
   inquirer
     .prompt([
       {
         type: "list",
         message: "Please choose what you would like to do?",
-        choices: ["concert-this", "spotify-this-song", "movie-this"],
+        choices: [
+          "concert-this",
+          "spotify-this-song",
+          "movie-this",
+          "do-what-it-says",
+        ],
         name: "action",
       },
     ])
@@ -32,28 +41,31 @@ function start() {
           "Please type in the artist's name to find their concerts?",
           choice
         );
+        addLog(choice);
       } else if (choice === "spotify-this-song") {
         main(
           "Please type in the name of the song you would like to search?",
           choice
         );
+        addLog(choice);
       } else if (choice === "movie-this") {
         main(
           "Please type in the name of the movie you would like to search for?",
           choice
         );
+        addLog(choice);
+      } else if (choice === "do-what-it-says") {
+        main("", choice);
+        addLog(choice);
       }
     })
     .catch((error) => {
-      if (error.isTtyError) {
-        // Prompt couldn't be rendered in the current environment
-      } else {
-        // Something else when wrong
-      }
+      console.log(error);
     });
 }
 
-//Need question , user input and, data
+//Need question , user input and, data.
+//Main function in taking in user data.
 
 function main(question, choice) {
   inquirer
@@ -161,7 +173,7 @@ function main(question, choice) {
         case "movie-this":
           {
             //take in password from env file
-            
+
             var pass = keys.movie;
 
             // Take in promp answer for movie
@@ -178,15 +190,29 @@ function main(question, choice) {
                 .then(function (response) {
                   var data = response.data;
                   var newReleasedDate = moment(data.Released, "MM/DD/YYYY");
-                  function tomatoRating(){
+                  function tomatoRating() {
                     var tomatoR = data.Ratings;
 
                     for (var i = 0; i < tomatoR.length; i++) {
-                      console.log(tomatoR[i]);
+                      var source = tomatoR[i].Source;
+                      if (source === "Rotten Tomatoes") {
+                        return tomatoR[i].Value;
+                      } else {
+                        return "N/A";
+                      }
                     }
                   }
-                  tomatoRating();
-                  console.log(`\nMovie Title: ${data.Title} \n\nReleased Date: ${moment(newReleasedDate).format("MM-DD-YYYY")} \n\nIMDB Rating: ${data.imdbRating} \n\nRotten Tomatoes Rating: \n\nCountry: ${data.Country} \n\nLanguage of the Movie: ${data.Language} \n\nPlot: ${data.Plot} \n\nActors: ${data.Actors}`);
+                  console.log(
+                    `\nMovie Title: ${data.Title} \n\nReleased Date: ${moment(
+                      newReleasedDate
+                    ).format("MM-DD-YYYY")} \n\nIMDB Rating: ${
+                      data.imdbRating
+                    } \n\nRotten Tomatoes Rating: ${tomatoRating()} \n\nCountry: ${
+                      data.Country
+                    } \n\nLanguage of the Movie: ${data.Language} \n\nPlot: ${
+                      data.Plot
+                    } \n\nActors: ${data.Actors}`
+                  );
                 })
                 .catch(function (err) {
                   console.log(err);
@@ -194,9 +220,22 @@ function main(question, choice) {
             }
           }
           break;
+        case "do-what-it-says":
+          {
+            fs.readFile("random.txt", "utf8", function (err, data) {
+              if (err) {
+                return console.log(err);
+              }
+
+              console.log(data);
+
+              var dataArr = data.split(",");
+            });
+          }
+          break;
         default:
           {
-            // console.log("Sorry that command doesn't exist!");
+            console.log("Sorry that command doesn't exist!");
           }
           break;
       }
@@ -204,6 +243,12 @@ function main(question, choice) {
     .catch(function (error) {
       console.log(error);
     });
+}
+
+function addLog(choice) {
+  fs.appendFile("./log.txt", "\n" + choice, function (err) {
+    if (err) console.log(err);
+  });
 }
 
 start();
