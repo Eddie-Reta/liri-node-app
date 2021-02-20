@@ -7,16 +7,6 @@ var keys = require("./js/keys.js");
 var Spotify = require("node-spotify-api");
 var fs = require("fs");
 
-// //bandApi
-// var bandApi =
-// "https://rest.bandsintown.com/artists/" +
-// searchInput +
-// "/events?app_id=codingbootcamp";
-// axios
-// .get(bandApi);
-
-// //spotifyApi
-
 //Start function for the initial launch of the process. Giving you a choice of options.
 function start() {
   inquirer
