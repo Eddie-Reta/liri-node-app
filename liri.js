@@ -73,10 +73,11 @@ function main(question, choice) {
               start();
             } else {
               addLog(choice, searchInput);
+              var id = keys.band
               var bandApi =
                 "https://rest.bandsintown.com/artists/" +
                 searchInput +
-                "/events?app_id=codingbootcamp";
+                "/events?app_id=" + id.secret ;
               axios
                 .get(bandApi)
                 .then(function (response) {

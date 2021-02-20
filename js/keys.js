@@ -7,3 +7,7 @@ exports.spotify = {
 exports.movie = {
     secret: process.env.OMDB_SECRET
 }
+
+exports.band = {
+    secret: process.env.BAND_ID
+}
