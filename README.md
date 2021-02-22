@@ -67,11 +67,13 @@
 
 # Credits
 
-Credit goes out to Trilogy Education and their Coding BootCamp at UNC. The idea to create such a productive 
-app to challenge and grow my skills was a blast. 
+Credit goes out to Trilogy Education and their Coding BootCamp at UNC. The idea to create such app pushed 
+    my skills to grow and learn new technologies to accomplish my end goal.  
 
 # My GitHub
 
+* [https://github.com/Eddie-Reta](https://github.com/Eddie-Reta)
+
 # License 
 
-* MIT `&copy` [Eduardo Reta Jr.](https://github.com/Eddie-Reta)
+* MIT :copyright: **Eduardo Reta Jr.**
