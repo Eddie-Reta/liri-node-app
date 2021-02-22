@@ -12,12 +12,31 @@
     or just need to get details on a movie.
     Just type it in and search for it after choosing the right command. 
 
-# Usage
+# Technologies/Framework
+
+## Powered by Node.js
+
+###  Npm Packeges:
+        * axios
+        * dotenv
+        * inquirer
+        * moment
+        * node-spotify-api
+  
+# Installation
 
 * First make sure you install node dependencies by running npm install.
 
-* You will need to get API tokens from Spotify Developers API, Bands in Town Artist Events API, and
-     OMDB API.
+* You will need to get API tokens from Spotify Developers API,
+    Bands in Town Artist Events API, and OMDB API.
 
 * Please start with creating dot.env file at the root directory. Now pass in
     your credentials in the designated fields.
+
+![Keys]("./images/keys.PNG")
+
+# Usage
+
+* Start by running: node liri.js
+
+![liri start]("./Gifs/liriStart.gif")

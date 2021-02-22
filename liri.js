@@ -58,7 +58,7 @@ function main(question, choice) {
     .prompt([
       {
         type: "input",
-        message: question,
+        message: question + " (Press enter)",
         name: "userInput",
       },
     ])

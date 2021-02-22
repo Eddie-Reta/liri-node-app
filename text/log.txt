@@ -1,2 +1,4 @@
 Log of Commands and Inputs: 
 
+
+Command: spotify-this-song  Input: candy
