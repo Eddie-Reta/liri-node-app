@@ -154,7 +154,7 @@ function main(question, choice) {
                       console.log(info);
                       fileOverwrite.push(info);
                     }
-                    overwriteFile(fileOverwrite)
+                    overwriteFile(fileOverwrite.join())
                   }
                 })
                 .catch(function (err) {
