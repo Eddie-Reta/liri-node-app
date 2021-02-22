@@ -33,10 +33,10 @@
 * Please start with creating dot.env file at the root directory. Now pass in
     your credentials in the designated fields.
 
-![Keys]("./images/keys.PNG")
+![Keys](./images/keys.PNG)
 
 # Usage
 
 * Start by running: node liri.js
 
-![liri start]("./Gifs/liriStart.gif")
+![liri start](./Gifs/liriStart.gif)
