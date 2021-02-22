@@ -1,11 +1,7 @@
 Log of Commands and Inputs: 
 
 
-Command: spotify-this-song  Input: candy
-Command: spotify-this-song  Input: Bohemian Rhapsody
-Command: spotify-this-song  Input: BOhemian rhapsody
-Command: spotify-this-song  Input: candy
-Command: concert-this  Input: justin bieber
-Command: movie-this  Input: avengers
-Command: spotify-this-song  Input: candy
-Command: spotify-this-song  Input: candy
+Command: concert-this  Input: Greensboro Symphony Orchestra
+Command: spotify-this-song  Input: Candy
+Command: movie-this  Input: Avengers Infinity War
+Command: movie-this  Input: Avengers Infinity War

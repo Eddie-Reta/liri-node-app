@@ -51,4 +51,27 @@
 
 ![KeywordSearch](./Gifs/searchInput.gif)
 
-* LOG/Data
+### LOG/Data
+ 
+ * You can find the log and data .txt file in the text folder.
+
+ * The app also has a log file which will keep a history of the command chosen and search input.
+    
+    ![HistoryLog](./images/historyLog.PNG)
+ 
+ * Data logged to the console after the search will also be passed to the data.txt file 
+    keeping the last copy of the data you received. Everytime you create a search it will overwrite the 
+    file. 
+
+    ![DATA](./images/dataLog.PNG)
+
+# Credits
+
+Credit goes out to Trilogy Education and their Coding BootCamp at UNC. The idea to create such a productive 
+app to challenge and grow my skills was a blast. 
+
+# My GitHub
+
+# License 
+
+* MIT `&copy` [Eduardo Reta Jr.](https://github.com/Eddie-Reta)
