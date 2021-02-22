@@ -40,3 +40,15 @@
 * Start by running: node liri.js
 
 ![liri start](./Gifs/liriStart.gif)
+
+* Now choose a command by using your arrow keys and selecting your desired command by pressing enter.
+
+![Commands](./images/command.PNG)
+
+* After choosing the command follow the prompt by entering your search keyword.
+
+* Here is an example of using the Spotify command to look up this track details and info.
+
+![KeywordSearch](./Gifs/searchInput.gif)
+
+* LOG/Data

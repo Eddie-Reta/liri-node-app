@@ -150,7 +150,7 @@ function main(question, choice) {
                         art.push(" " + artist[i].name);
                       }
 
-                      var info =  `\nHere is the track ${songsName}. \n\nThese are the artist on the track ${art}. \n\nThis track belongs to this album ${albumName}. \n\nHere is a preview link from Spotify ${previewLink}.`
+                      var info =  `\nHere is the track ${songsName}. \n\nThese are the artist on the track: ${art}. \n\nThis track belongs to this album ${albumName}. \n\nHere is a preview link from Spotify ${previewLink}.`
                       console.log(info);
                       fileOverwrite.push(info);
                     }
