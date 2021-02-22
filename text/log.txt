@@ -5,3 +5,4 @@ Command: concert-this  Input: Greensboro Symphony Orchestra
 Command: spotify-this-song  Input: Candy
 Command: movie-this  Input: Avengers Infinity War
 Command: movie-this  Input: Avengers Infinity War
+Command: spotify-this-song  Input: Candy

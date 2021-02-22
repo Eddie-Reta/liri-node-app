@@ -25,55 +25,55 @@
   
 # Installation
 
-* First make sure you install node dependencies by running npm install.
+  * First make sure you install node dependencies by running npm install.
 
-* You will need to get API tokens from Spotify Developers API,
+  * You will need to get API tokens from Spotify Developers API,
     Bands in Town Artist Events API, and OMDB API.
 
-* Please start with creating dot.env file at the root directory. Now pass in
+  * Please start with creating dot.env file at the root directory. Now pass in
     your credentials in the designated fields.
 
-![Keys](./images/keys.PNG)
+  ![Keys](./images/keys.PNG)
 
 # Usage
 
-* Start by running: node liri.js
+  * Start by running: node liri.js
 
-![liri start](./Gifs/liriStart.gif)
+   ![liri start](./Gifs/liriStart.gif)
 
-* Now choose a command by using your arrow keys and selecting your desired command by pressing enter.
+  * Now choose a command by using your arrow keys and selecting your desired command by pressing enter.
 
-![Commands](./images/command.PNG)
+   ![Commands](./images/command.PNG)
 
-* After choosing the command follow the prompt by entering your search keyword.
+  * After choosing the command follow the prompt by entering your search keyword.
 
-* Here is an example of using the Spotify command to look up this track details and info.
+  * Here is an example of using the Spotify command to look up this track details and info.
 
-![KeywordSearch](./Gifs/searchInput.gif)
+   ![KeywordSearch](./Gifs/searchInput.gif)
 
 ### LOG/Data
  
- * You can find the log and data .txt file in the text folder.
+  * You can find the log and data .txt file in the text folder.
 
- * The app also has a log file which will keep a history of the command chosen and search input.
+  * The app also has a log file which will keep a history of the command chosen and search input.
     
-    ![HistoryLog](./images/historyLog.PNG)
+     ![HistoryLog](./images/historyLog.PNG)
  
- * Data logged to the console after the search will also be passed to the data.txt file 
+  * Data logged to the console after the search will also be passed to the data.txt file 
     keeping the last copy of the data you received. Everytime you create a search it will overwrite the 
     file. 
 
-    ![DATA](./images/dataLog.PNG)
+     ![DATA](./images/dataLog.PNG)
 
 # Credits
 
-Credit goes out to Trilogy Education and their Coding BootCamp at UNC. The idea to create such app pushed 
-    my skills to grow and learn new technologies to accomplish my end goal.  
+  Credit goes out to Trilogy Education and their Coding BootCamp at UNC. The idea to create such app pushed 
+  my skills to grow and learn new technologies to accomplish my end goal.  
 
 # My GitHub
 
-* [https://github.com/Eddie-Reta](https://github.com/Eddie-Reta)
+  [https://github.com/Eddie-Reta](https://github.com/Eddie-Reta)
 
 # License 
 
-* MIT :copyright: **Eduardo Reta Jr.**
+  MIT :copyright: **Eduardo Reta Jr.**
